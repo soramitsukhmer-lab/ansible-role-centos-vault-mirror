@@ -1,0 +1,21 @@
+# https://dev.to/franzwong/fix-cannot-find-a-valid-baseurl-for-repo-in-centos-1h07
+---
+- name: Gather /etc/yum.repos.d/*.repo files
+  ansible.builtin.find:
+    paths: /etc/yum.repos.d/
+    patterns: '*.repo'
+  register: repo_files
+
+- name: Update CentOS http://mirrorlist.centos.org to http://vault.centos.org
+  ansible.builtin.replace:
+    path: "{{ item.path }}"
+    regexp: 'mirrorlist=http://mirrorlist.centos.org'
+    replace: 'mirrorlist=http://vault.centos.org'
+  with_items: "{{ repo_files.files }}"
+
+- name: Update CentOS http://mirror.centos.org to http://vault.centos.org
+  ansible.builtin.replace:
+    path: "{{ item.path }}"
+    regexp: 'baseurl=http://mirror.centos.org'
+    replace: 'baseurl=http://vault.centos.org'
+  with_items: "{{ repo_files.files }}"
