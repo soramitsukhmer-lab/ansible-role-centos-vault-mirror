@@ -3,7 +3,7 @@
 - name: Gather /etc/yum.repos.d/*.repo files
   ansible.builtin.find:
     paths: /etc/yum.repos.d/
-    patterns: 'CentOS-*.repo'
+    patterns: '*.repo'
   register: repo_files
 
 - name: Update CentOS http://mirrorlist.centos.org to http://vault.centos.org
