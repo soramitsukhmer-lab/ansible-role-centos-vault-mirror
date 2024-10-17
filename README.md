@@ -6,5 +6,5 @@ Ansible Role - CentOS Vault Mirror
 ```yaml
 - hosts: all
   roles:
-    - soramitsukhmer-lab.centos-vault-mirror
+    - socheatsok78-lab.centos-vault-mirror
 ```
