@@ -5,8 +5,8 @@ galaxy_info:
   role_name: centos-vault-mirror
   author: socheatsok78
   description: Update CentOS EOL base packages repositories
-  issue_tracker_url: https://github.com/soramitsukhmer-lab/ansible-role-centos-vault-mirror/issues
-  company: "Soramitsu (Khmer) Co.,LTD"
+  issue_tracker_url: https://github.com/socheatsok78-lab/ansible-role-centos-vault-mirror/issues
+  company: "socheatsok78"
   license: "license (BSD, MIT)"
   min_ansible_version: "2.4"
   platforms: []
